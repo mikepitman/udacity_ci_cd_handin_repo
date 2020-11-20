@@ -20,7 +20,7 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home - with pipelines! Yaml trigger changed to 'main' from 'master'</h3>"
+    html = "<h3>Sklearn Prediction Home - Pipelines working correctly now.</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
