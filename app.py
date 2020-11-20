@@ -20,7 +20,7 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home - with pipelines! Does the pipeline pick up changes automatically?</h3>"
+    html = "<h3>Sklearn Prediction Home - with pipelines! Another change</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
