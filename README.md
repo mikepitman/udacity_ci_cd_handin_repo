@@ -15,9 +15,6 @@ These resources provide timelines and a task breakdown for implementing this pro
 The diagram below outlines the how the configured components interact to provide a CI/CD pipeline.
 ![Architectural diagram](/DevOpsDiagramForHandin.png)
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
-
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
 * Project running on Azure App Service
