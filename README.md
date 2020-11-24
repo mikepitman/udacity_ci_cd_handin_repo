@@ -1,14 +1,19 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+This project outlines the process of building a CI/CD (Continuous Integration/Continuous Deployment) pipeline, leveraging 
+GitHub as the code repository and Azure pipelines to build and deploy the application. The project forms the handin requirement
+for the CI/CD Pipeline project for the Udacity Devops Nanodegree.
 
 ## Project Plan
-<TODO: Project Plan
+These resources provide timelines and a task breakdown for implementing this project.
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+* [Trello board](https://trello.com/b/PafhzaZe/lpr-mobile-app-dev-board)
+* [Scheduling spreadsheet](https://docs.google.com/spreadsheets/d/1HbHKXZVIE0PdvfDRzTfFPq-L95pWg8ykViw20-7eCrw/edit?usp=sharing)
 
 ## Instructions
+
+The diagram below outlines the how the configured components interact to provide a CI/CD pipeline.
+![Architectural diagram](/DevOpsDiagramForHandin.png)
 
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
