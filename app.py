@@ -54,13 +54,14 @@ def predict():
 
     """
 
+    json_payload = request.json
     try:
         clf = joblib.load("boston_housing_prediction.joblib")
     except:
         LOG.info("JSON payload: %s", json_payload)
         return "Model not loaded"
 
-    json_payload = request.json
+    # json_payload = request.json
     LOG.info("JSON payload: %s", json_payload)
     inference_payload = pd.DataFrame(json_payload)
     LOG.info("inference payload DataFrame: %s", inference_payload)
