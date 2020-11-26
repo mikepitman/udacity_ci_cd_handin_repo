@@ -19,7 +19,7 @@ You will need a profile on Github.com and an account with Microsoft Azure. There
 #### Fork the Repository
 To get started, fork the GitHub repository [here](https://github.com/mikepitman/udacity_ci_cd_handin_repo) to your Github profile. 
 You can clone it from your profile into your IDE. You can also clone the repository into Azure Cloud Shell:
-'git clone git@github.com:<your Github profile name>/udacity_ci_cd_handin_repo.git'
+'git clone git@github.com:/<your Github profile name/>/udacity_ci_cd_handin_repo.git'
 ![Clone GitHub repo into Azure Cloud Shell](/screenshots/handin_CloneGithubRepoIntoAzure.PNG)
 
 #### Setup Azure Environment
