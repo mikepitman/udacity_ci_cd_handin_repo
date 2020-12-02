@@ -53,8 +53,8 @@ chmod 744 make_predict_azure_app.sh
 In GitHub, open your forked repository. 
 ![Actions tab in GitHub](/screenshots/handin_GithubActionsTab.PNG)
 The forked repository contains the following file, which configures GitHub Actions: `.github/workflows/pythonapp.yml`
-Because of the existing configuration, GitHub actions will validate the code in commits. Ensure that your commits are built 
-successfully by GitHub Actions. 
+Through the existing configuration, GitHub Actions will run configure a test environment and execute various tests to validate 
+the code in commits. Ensure that your commits are built successfully by GitHub Actions. 
 
 #### Setup Azure Pipelines
 To set up Azure Pipelines, you'll need to configure your repository in GitHub to interface to Azure Pipelines. If you do not 
@@ -66,18 +66,36 @@ Ensure that you log into your Azure account associated with your DevOps account 
 
 Create a new new project, using the New Project button in the top-right corner of the browser page.
 ![Azure Devops New Project button](/screenshots/handin_DevopsNewProject.PNG)
+
 Provide a project name (required field) and meaningful description if desired, and click 'Create'.
 
 On the landing page for a blank new project, select 'Pipelines' in the left menubar, or the 'Pipelines' button (both circled in red) under the 
 'Welcome to the Project' image, and then 'Create Pipeline'. 
 Select the code source - in this instance, the code is in GitHub (NOT GitHub Enterprise Server).
 ![Azure Devops - New pipeline - select code source](/screenshots/handin_CreatePipelineSelectRepo.PNG)
-Select the forked repository in your GitHub account. Devops Pipelines uses the existing azure-pipelines.yml file to configure the pipeline.
+Select the forked repository in your GitHub account. For 'Configure your pipeline', select 'Python to Linux Web App on Azure'. Select the correct
+Azure subscription, and the web app name created earlier. Then click 'Validate and Configure', and review the generated pipeline YAML. Ensure that
+the parameter for 'Trigger' on line 6/7 matches the name of the GitHub branch that will trigger builds. 
+![Azure Devops - Select pipeline](/screenshots/handin_SelectPipelineOption.PNG)
+ 
+Click 'Run' to save and run the pipeline. 
+
+-----------> below is incorrect
+'Existing Azure Pipelines YAML file'. You may need to select
+'Show more' to find this option. In the pop-up on the right, select azure-pipelines.yml for 'Path', and 'Continue'.
+
+Devops Pipelines uses the existing azure-pipelines.yml file to configure the pipeline.
 
 In the final 'Review' step, review the contents of the azure-pipelines.yml file. Change the `webAppName` and `environmentName` parameters to 
 something applicable to your setup.
 ![Azure Devops - New pipeline - review .yaml config file](/screenshots/handin_PipelineReview.PNG)
- 
+
+After updating the relevant fields as required, run the pipeline for the first time using the 'Run' button on the right of the window.
+
+Connect your project to Github - open the project settings (gear icon at bottom left of screen), then select 'GitHib connections'. 
+Then, click 'Connect your GitHub account'. Select the correct GitHub account (if you have multiple), and then the repository and save.
+
+--> need to connect github account - the pipelines yml file includes connection ID to github, which is not available directly. 
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
