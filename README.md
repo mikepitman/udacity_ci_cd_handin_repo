@@ -22,6 +22,7 @@ To get started, fork the GitHub repository [here](https://github.com/mikepitman/
 You can clone it from your profile into your IDE. You can also clone the repository into Azure Cloud Shell:
 'git clone git@github.com:(your Github profile name)/udacity_ci_cd_handin_repo.git'
 ![Clone GitHub repo into Azure Cloud Shell](/screenshots/handin_CloneGithubRepoIntoAzure.PNG)
+Delete the azure-pipelines.yml file - it will be created at a later stage for your Azure DevOps profile.
 
 #### Setup Azure Environment, Create WebApp
 After cloning the project to Azure Cloud Shell, change directory to the newly created directory. Then setup the virtual environment, and switch to that environment.
@@ -78,24 +79,12 @@ Azure subscription, and the web app name created earlier. Then click 'Validate a
 the parameter for 'Trigger' on line 6/7 matches the name of the GitHub branch that will trigger builds. 
 ![Azure Devops - Select pipeline](/screenshots/handin_SelectPipelineOption.PNG)
  
-Click 'Run' to save and run the pipeline. 
-
------------> below is incorrect
-'Existing Azure Pipelines YAML file'. You may need to select
-'Show more' to find this option. In the pop-up on the right, select azure-pipelines.yml for 'Path', and 'Continue'.
-
-Devops Pipelines uses the existing azure-pipelines.yml file to configure the pipeline.
-
-In the final 'Review' step, review the contents of the azure-pipelines.yml file. Change the `webAppName` and `environmentName` parameters to 
-something applicable to your setup.
+Click 'Run' to save and run the pipeline.
+The pipeline should build successfully, and deploy the app. Test the entire configuration by editting the HTML header in app.py and commit the change.
+Github Actions will run, and the Azure pipeline will detect the change, and run the pipeline as well. Once completed, validate the change by reloading
+the application in the browser and verifying the change appears in the HTML header.    
 ![Azure Devops - New pipeline - review .yaml config file](/screenshots/handin_PipelineReview.PNG)
 
-After updating the relevant fields as required, run the pipeline for the first time using the 'Run' button on the right of the window.
-
-Connect your project to Github - open the project settings (gear icon at bottom left of screen), then select 'GitHib connections'. 
-Then, click 'Connect your GitHub account'. Select the correct GitHub account (if you have multiple), and then the repository and save.
-
---> need to connect github account - the pipelines yml file includes connection ID to github, which is not available directly. 
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
