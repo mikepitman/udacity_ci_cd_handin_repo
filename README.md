@@ -22,7 +22,7 @@ To get started, fork the GitHub repository [here](https://github.com/mikepitman/
 You can clone it from your profile into your IDE. You can also clone the repository into Azure Cloud Shell:
 'git clone git@github.com:(your Github profile name)/udacity_ci_cd_handin_repo.git'
 ![Clone GitHub repo into Azure Cloud Shell](/screenshots/handin_CloneGithubRepoIntoAzure.PNG)
-Delete the azure-pipelines.yml file - it will be created at a later stage for your Azure DevOps profile.
+Delete, or add `.backup` to the end of the azure-pipelines.yml file - it will be created at a later stage for your Azure DevOps profile.
 
 #### Setup Azure Environment, Create WebApp
 After cloning the project to Azure Cloud Shell, change directory to the newly created directory. Then setup the virtual environment, and switch to that environment.
@@ -74,27 +74,33 @@ On the landing page for a blank new project, select 'Pipelines' in the left menu
 'Welcome to the Project' image, and then 'Create Pipeline'. 
 Select the code source - in this instance, the code is in GitHub (NOT GitHub Enterprise Server).
 ![Azure Devops - New pipeline - select code source](/screenshots/handin_CreatePipelineSelectRepo.PNG)
-Select the forked repository in your GitHub account. For 'Configure your pipeline', select 'Python to Linux Web App on Azure'. Select the correct
-Azure subscription, and the web app name created earlier. Then click 'Validate and Configure', and review the generated pipeline YAML. Ensure that
-the parameter for 'Trigger' on line 6/7 matches the name of the GitHub branch that will trigger builds. 
+
+Select the forked repository in your GitHub account. For 'Configure your pipeline', select 'Python to Linux Web App on Azure'. 
 ![Azure Devops - Select pipeline](/screenshots/handin_SelectPipelineOption.PNG)
+
+Select the correct Azure subscription, and the web app name created earlier. Then click 'Validate and Configure', and review the generated pipeline YAML. Ensure that
+the parameter for 'Trigger' on line 6/7 matches the name of the GitHub branch that will trigger builds. 
+![Azure Devops - New pipeline - review .yaml config file](/screenshots/handin_PipelineReview.PNG)
  
 Click 'Run' to save and run the pipeline.
 The pipeline should build successfully, and deploy the app. Test the entire configuration by editting the HTML header in app.py and commit the change.
 Github Actions will run, and the Azure pipeline will detect the change, and run the pipeline as well. Once completed, validate the change by reloading
 the application in the browser and verifying the change appears in the HTML header.    
-![Azure Devops - New pipeline - review .yaml config file](/screenshots/handin_PipelineReview.PNG)
+![Azure Devops - successful pipeline run](/screenshots/handin_AzurePipelineBuild.PNG)
 
+![Azure AppService - log stream](/screenshots/handin_LogStream.PNG)
+To view the log stream from the Azure landing page, search for 'App Services' to display the current App Services running. Select the app service you created earlier,
+and scroll down the App Service menu ribbon to the 'Log Stream' option. It may take a minute or two to connect, but once connected it will stream the App Service log.
+Reload the app in the browser to check that HTTP GET requests come through, as shown above. 
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
 * Output of a test run
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
 * Running Azure App Service from Azure Pipelines automatic deployment
  
-* Output of streamed log files from deployed application
+
 
 ## Enhancements
 
