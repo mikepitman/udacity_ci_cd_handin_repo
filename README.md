@@ -93,18 +93,10 @@ To view the log stream from the Azure landing page, search for 'App Services' to
 and scroll down the App Service menu ribbon to the 'Log Stream' option. It may take a minute or two to connect, but once connected it will stream the App Service log.
 Reload the app in the browser to check that HTTP GET requests come through, as shown above. 
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-
-* Running Azure App Service from Azure Pipelines automatic deployment
- 
-
-
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+Project is a good demonstration of setting up CI and CD pipelines, for GitHub and Azure. An improvement would be to have a HTTP POST with the JSON required for a 
+web-based prediction from the ML application.
 
 ## Demo 
 
