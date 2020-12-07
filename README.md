@@ -1,3 +1,5 @@
+![Python application test with Github Actions](https://github.com/mikepitman/udacity_ci_cd_handin_repo/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
+
 # Overview
 
 This project outlines the process of building a CI/CD (Continuous Integration/Continuous Deployment) pipeline, leveraging 
