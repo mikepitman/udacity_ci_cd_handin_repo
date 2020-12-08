@@ -1,4 +1,4 @@
-# Source: https://locust.io/
+# Source: https://locust.io/, with json payload from make_predict_azure_app.sh
 from locust import HttpUser, between, task
 
 class WebsiteUser(HttpUser):
