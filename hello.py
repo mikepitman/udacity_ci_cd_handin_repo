@@ -6,10 +6,10 @@ import click
 def hello(name, color):
     if name == "Thor":
         click.echo("Thor, you are always red.")
-        click.echo(click.style(f"Hello {name}!", fg="red"))
+        click.echo(click.style("Hello {name}!", fg="red"))
     else:
-        click.echo(f"Your color is {color}!")
-        click.echo(click.style(f"Hello {name}!", fg=color))
+        click.echo("Your color is {color}!")
+        click.echo(click.style("Hello {name}!", fg=color))
 
 if __name__ == "__main__":
     hello()
