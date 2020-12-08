@@ -59,6 +59,9 @@ The forked repository contains the following file, which configures GitHub Actio
 Through the existing configuration, GitHub Actions will run configure a test environment and execute various tests to validate 
 the code in commits. Ensure that your commits are built successfully by GitHub Actions. 
 
+Successful builds get a green 'tick' indicator. The steps undertaken during the CI build can be viewed by category/step: 
+1[GitHub Actions successful build of committed code](/screenshots/handin_GithubActionsBuild.PNG)
+
 #### Setup Azure Pipelines
 To set up Azure Pipelines, you'll need to configure your repository in GitHub to interface to Azure Pipelines. If you do not 
 have the Azure Pipelines app installed in GitHib, you can install it by following steps 5-14 of Exercise 1, Task 1 in [this guide](https://www.azuredevopslabs.com/labs/azuredevops/github-integration/).
@@ -89,11 +92,19 @@ The pipeline should build successfully, and deploy the app. Test the entire conf
 Github Actions will run, and the Azure pipeline will detect the change, and run the pipeline as well. Once completed, validate the change by reloading
 the application in the browser and verifying the change appears in the HTML header.    
 ![Azure Devops - successful pipeline run](/screenshots/handin_AzurePipelineBuild.PNG)
+![Azure Devops - successful pipeline run](/screenshots/handin_AzurePipelineBuild2.PNG)
 
 ![Azure AppService - log stream](/screenshots/handin_LogStream.PNG)
 To view the log stream from the Azure landing page, search for 'App Services' to display the current App Services running. Select the app service you created earlier,
 and scroll down the App Service menu ribbon to the 'Log Stream' option. It may take a minute or two to connect, but once connected it will stream the App Service log.
 Reload the app in the browser to check that HTTP GET requests come through, as shown above. 
+
+#### Test Load Capacity
+The repo contains a locust file for load testing the deployed application.
+![Azure Devops - load testing](/screenshots/handin_LocustLoadTest.PNG)
+With the web application running, run this command from the Azure CLoud Shell command line (Edit the command for your app URL).
+`locust -f locust.py --headless --host https://udacity-mike-cicd-handin.azurewebsites.net --users 500 --run-time 12s --spawn-rate 50`
+It will create 500 users at a rate of 50 per second, querying the page root and the /predict path, for 12 seconds. The output will mirror the screenshot above.
 
 ## Enhancements
 
