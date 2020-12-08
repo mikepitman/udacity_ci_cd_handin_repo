@@ -32,10 +32,12 @@ After cloning the project to Azure Cloud Shell, change directory to the newly cr
 cd udacity_ci_cd_handin_repo
 make setup
 source ~/.udacity-devops/bin/activate
+make test
 ```
+![Makefile - 'make test' to test code](/screenshots/handin_MakeTestOutput.PNG)
 
 Run the 'make all' utility to install the required packages, test and lint the code. 
-![Makefile - 'make all' install required packages, lints and tests code](/screenshots/handin_MakeTestOutput.PNG)
+![Makefile - 'make all' install required packages, lints and tests code](/screenshots/handin_MakeAllOutput.PNG)
 Then, create an app service and initially deploy the app in Cloud Shell.
 Give it a name that is unique in Azure, in place of the placeholder (your-appservice)
 ```
