@@ -62,7 +62,7 @@ Through the existing configuration, GitHub Actions will run configure a test env
 the code in commits. Ensure that your commits are built successfully by GitHub Actions. 
 
 Successful builds get a green 'tick' indicator. The steps undertaken during the CI build can be viewed by category/step: 
-1[GitHub Actions successful build of committed code](/screenshots/handin_GithubActionsBuild.PNG)
+![GitHub Actions successful build of committed code](/screenshots/handin_GithubActionsBuildDetail.PNG)
 
 #### Setup Azure Pipelines
 To set up Azure Pipelines, you'll need to configure your repository in GitHub to interface to Azure Pipelines. If you do not 
