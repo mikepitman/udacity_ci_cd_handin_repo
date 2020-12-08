@@ -34,7 +34,9 @@ make setup
 source ~/.udacity-devops/bin/activate
 ```
 
-Run the 'make all' utility to install the required packages and lint the code. Then, create an app service and initially deploy the app in Cloud Shell.
+Run the 'make all' utility to install the required packages, test and lint the code. 
+![Makefile - 'make all' install required packages, lints and tests code](/screenshots/handin_MakeTestOutput.PNG)
+Then, create an app service and initially deploy the app in Cloud Shell.
 Give it a name that is unique in Azure, in place of the placeholder (your-appservice)
 ```
 make all
