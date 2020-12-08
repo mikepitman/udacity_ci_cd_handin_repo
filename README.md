@@ -88,19 +88,21 @@ the parameter for 'Trigger' on line 6/7 matches the name of the GitHub branch th
 ![Azure Devops - New pipeline - review .yaml config file](/screenshots/handin_PipelineReview.PNG)
  
 Click 'Run' to save and run the pipeline.
-The pipeline should build successfully, and deploy the app. Test the entire configuration by editting the HTML header in app.py and commit the change.
+The pipeline should build successfully, and deploy the app. Test the entire configuration by editing the HTML header in app.py and commit the change.
 Github Actions will run, and the Azure pipeline will detect the change, and run the pipeline as well. Once completed, validate the change by reloading
-the application in the browser and verifying the change appears in the HTML header.    
+the application in the browser and verifying the change appears in the HTML header.
+Build and Deploy summary:
 ![Azure Devops - successful pipeline run](/screenshots/handin_AzurePipelineBuild.PNG)
+Pipeline breakdown detail:
 ![Azure Devops - successful pipeline run](/screenshots/handin_AzurePipelineBuild2.PNG)
 
-![Azure AppService - log stream](/screenshots/handin_LogStream.PNG)
 To view the log stream from the Azure landing page, search for 'App Services' to display the current App Services running. Select the app service you created earlier,
 and scroll down the App Service menu ribbon to the 'Log Stream' option. It may take a minute or two to connect, but once connected it will stream the App Service log.
-Reload the app in the browser to check that HTTP GET requests come through, as shown above. 
+Reload the app in the browser to check that HTTP GET requests come through, as shown below.
+![Azure AppService - log stream](/screenshots/handin_LogStream.PNG)
 
 #### Test Load Capacity
-The repo contains a locust file for load testing the deployed application.
+The repo contains a [locust](https://locust.io/) file for load testing the deployed application.
 ![Azure Devops - load testing](/screenshots/handin_LocustLoadTest.PNG)
 With the web application running, run this command from the Azure CLoud Shell command line (Edit the command for your app URL).
 `locust -f locust.py --headless --host https://udacity-mike-cicd-handin.azurewebsites.net --users 500 --run-time 12s --spawn-rate 50`
